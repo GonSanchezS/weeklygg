@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_01_113900) do
+ActiveRecord::Schema.define(version: 2019_06_01_123035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.string "country"
     t.string "continent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_cities_on_country_id"
     t.index ["slug"], name: "index_cities_on_slug", unique: true
   end
 
@@ -30,13 +31,14 @@ ActiveRecord::Schema.define(version: 2019_06_01_113900) do
     t.string "url"
     t.text "description"
     t.string "size"
-    t.string "country"
     t.string "linkedin"
     t.string "twitter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "city_id"
+    t.bigint "country_id"
     t.index ["city_id"], name: "index_companies_on_city_id"
+    t.index ["country_id"], name: "index_companies_on_country_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -59,5 +61,7 @@ ActiveRecord::Schema.define(version: 2019_06_01_113900) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  add_foreign_key "cities", "countries"
   add_foreign_key "companies", "cities"
+  add_foreign_key "companies", "countries"
 end

@@ -1,12 +1,14 @@
 <h1>Esports companies in <%= @city.name %></h1>
 
 
+<p>Back to <%= link_to @city.country.name, country_path(@city.country.friendly_id) %></p>
+
 <% @companies.each do |company| %>
 
 <h2><a href="<%= company.url%>"><%= company.name %></a></h2>
 <p><%= company.description %></p>
 <ul>
-  <li><%= company.city.name %>, <%= company.city.country %></li>
+  <li><%= company.city.name %>, <%= company.city.country.name %></li>
   <li><%= company.size %></li>
   <li><%= company.linkedin %></li>
   <li><%= company.twitter %></li>
