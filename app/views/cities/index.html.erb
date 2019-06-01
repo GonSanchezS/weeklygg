@@ -1,0 +1,7 @@
+<h1>Esports companies by cities</h1>
+
+<ul>
+  <% @cities.each do |city| %>
+  <li><%= link_to city.name, city_path(city.friendly_id) %></li>
+  <% end %>
+</ul>

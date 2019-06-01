@@ -1,7 +1,7 @@
 <h1>Esports companies in <%= @city.name %></h1>
 
 
-<p>Back to <%= link_to @city.country.name, country_path(@city.country.friendly_id) %></p>
+<p>Back to <%= link_to @city.country.name, country_path(@city.country.friendly_id) %> or check <%= link_to "all cities", cities_path %>.</p>
 
 <% @companies.each do |company| %>
 

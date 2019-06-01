@@ -1,0 +1,7 @@
+<h1>Esports companies by countries</h1>
+
+<ul>
+  <% @countries.each do |country| %>
+  <li><%= link_to country.name, country_path(country.friendly_id) %></li>
+  <% end %>
+</ul>
