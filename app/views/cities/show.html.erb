@@ -1,1 +1,15 @@
 <h1>Esports companies in <%= @city.name %></h1>
+
+
+<% @companies.each do |company| %>
+
+<h2><a href="<%= company.url%>"><%= company.name %></a></h2>
+<p><%= company.description %></p>
+<ul>
+  <li><%= company.city.name %>, <%= company.city.country %></li>
+  <li><%= company.size %></li>
+  <li><%= company.linkedin %></li>
+  <li><%= company.twitter %></li>
+</ul>
+
+<% end %>
