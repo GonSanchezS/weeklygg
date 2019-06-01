@@ -7,16 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-City.create(name: 'London', country_id: '1', )
-City.create(name: 'Los Angeles', country_id: '2')
-City.create(name: 'Paris', country_id: '3')
-City.create(name: 'Manchester', country_id: '1')
-
-
 Country.create(name: 'England', continent: 'North America')
 Country.create(name: 'United States', continent: 'North America')
 Country.create(name: 'France', continent: 'Paris')
 
+City.create(name: 'London', country_id: '1', )
+City.create(name: 'Los Angeles', country_id: '2')
+City.create(name: 'Paris', country_id: '3')
+City.create(name: 'Manchester', country_id: '1')
 
 Company.create(name: 'Popdog', description: 'This is an amazing description, please pay attention to it.', size: '11-50', city_id: '2', country_id: '3', linkedin: 'https://linkedin.com/username', twitter: 'https://twitter.com/username')
 Company.create(name: 'Fnatic', description: 'This is an amazing description, please pay attention to it.', size: '11-50', city_id: '1', country_id: '1',linkedin: 'https://linkedin.com/username', twitter: 'https://twitter.com/username')
