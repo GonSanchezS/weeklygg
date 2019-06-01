@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   get 'list', to: 'static_pages#list'
   resources :cities, only: [:index, :show]
+  resources :countries, only: [:index, :show]
 end
