@@ -2,6 +2,6 @@
 
 <ul>
   <% @countries.each do |country| %>
-  <li><%= link_to country.name, country_path(country.friendly_id) %></li>
+  <li><%= link_to country.name, country_path(country.friendly_id) %> (<%= country.companies.count %>)</li>
   <% end %>
 </ul>
