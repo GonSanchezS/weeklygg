@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   def show
-    @companies = Company.all
+    @city = City.find(params[:id])
+
   end
 end
