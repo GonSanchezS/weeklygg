@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'friendly_id', '~> 5.2.4'
 gem 'sitemap_generator'
+gem 'webpacker', '~> 4.0.0'
+gem 'tailwindcss', '~> 1.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
